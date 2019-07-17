@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+    <title>Medical</title>
+  </head>
+  <body>
+    <h1>Refined text</h1>
+    <%= transcribe %>
+    <h1>Categories</h1>
+    <h2>ANATOMY</h2>
+    <table>
+      <tr>
+        <th>Text - Score</th>
+        <th>Type</th>
+      </tr>
+      <% for(var i = 0; i < medicalCategories.ANATOMY.length; i++) { %>
+      <tr>
+        <td>
+          <%= medicalCategories.ANATOMY[i].Text %> - <%=
+          medicalCategories.ANATOMY[i].Score %>
+        </td>
+        <td><%= medicalCategories.ANATOMY[i].Type %></td>
+      </tr>
+      <% } %>
+    </table>
+
+    <h2>MEDICAL CONDITION</h2>
+    <table>
+      <tr>
+        <th>Text - Score</th>
+        <th>Type</th>
+        <th>Traits</th>
+      </tr>
+      <% for(var i = 0; i < medicalCategories.MEDICAL_CONDITION.length; i++) {
+      %>
+      <tr>
+        <td>
+          <%= medicalCategories.MEDICAL_CONDITION[i].Text %> - <%=
+          medicalCategories.MEDICAL_CONDITION[i].Score %>
+        </td>
+        <td><%= medicalCategories.MEDICAL_CONDITION[i].Type %></td>
+        <td>
+          <% for (var j = 0; j <
+          medicalCategories.MEDICAL_CONDITION[i].Traits.length; j++) { %> <%=
+          medicalCategories.MEDICAL_CONDITION[i].Traits[j].Name %> - <%=
+          medicalCategories.MEDICAL_CONDITION[i].Traits[j].Score %> <% } %>
+        </td>
+      </tr>
+      <% } %>
+    </table>
+
+    <h2>MEDICATION</h2>
+    <table>
+      <tr>
+        <th>Text - Score</th>
+        <th>Type</th>
+        <th>Attributes</th>
+        <th>Traits</th>
+      </tr>
+      <% for(var i = 0; i < medicalCategories.MEDICATION.length; i++) { %>
+      <tr>
+        <td>
+          <%= medicalCategories.MEDICATION[i].Text %> - <%=
+          medicalCategories.MEDICATION[i].Score %>
+        </td>
+        <td><%= medicalCategories.MEDICATION[i].Type %></td>
+        <td>
+          <% for (var j = 0; j <
+          medicalCategories.MEDICATION[i].Attributes.length; j++) { %> <%=
+          medicalCategories.MEDICATION[i].Attributes[j].Type %> - <%=
+          medicalCategories.MEDICATION[i].Attributes[j].Text %> <% } %>
+        </td>
+        <td>
+          <% for (var j = 0; j < medicalCategories.MEDICATION[i].Traits.lenght;
+          j++) { %> <%= medicalCategories.MEDICATION[i].Traits[j].Name %> - <%=
+          medicalCategories.MEDICATION[i].Traits[j].Score %> <% } %>
+        </td>
+      </tr>
+      <% } %>
+    </table>
+
+    <h2>PROTECTED HEALTH INFORMATION</h2>
+    <table>
+      <tr>
+        <th>Text - Score</th>
+        <th>Type</th>
+      </tr>
+      <% for(var i = 0; i <
+      medicalCategories.PROTECTED_HEALTH_INFORMATION.length; i++) { %>
+      <tr>
+        <td>
+          <%= medicalCategories.PROTECTED_HEALTH_INFORMATION[i].Text %> - <%=
+          medicalCategories.PROTECTED_HEALTH_INFORMATION[i].Score %>
+        </td>
+        <td><%= medicalCategories.PROTECTED_HEALTH_INFORMATION[i].Type %></td>
+      </tr>
+      <% } %>
+    </table>
+
+    <h2>TEST TREATMENT PROCEDURE:</h2>
+    <table>
+      <tr>
+        <th>Text - Score</th>
+        <th>Type</th>
+        <th>Attributes</th>
+        <th>Traits</th>
+      </tr>
+      <% for(var i = 0; i < medicalCategories.TEST_TREATMENT_PROCEDURE.length;
+      i++) { %>
+      <tr>
+        <td>
+          <%= medicalCategories.TEST_TREATMENT_PROCEDURE[i].Text %> - <%=
+          medicalCategories.TEST_TREATMENT_PROCEDURE[i].Score %>
+        </td>
+        <td><%= medicalCategories.TEST_TREATMENT_PROCEDURE[i].Type %></td>
+        <td>
+          <% for (var j = 0; j <
+          medicalCategories.TEST_TREATMENT_PROCEDURE[i].Attributes.length; j++)
+          { %> <%=
+          medicalCategories.TEST_TREATMENT_PROCEDURE[i].Attributes[j].Type %> -
+          <%= medicalCategories.TEST_TREATMENT_PROCEDURE[i].Attributes[j].Text
+          %> <% } %>
+        </td>
+        <td>
+          <% for (var j = 0; j <
+          medicalCategories.TEST_TREATMENT_PROCEDURE[i].Traits.lenght; j++) { %>
+          <%= medicalCategories.TEST_TREATMENT_PROCEDURE[i].Traits[j].Name %> -
+          <%= medicalCategories.TEST_TREATMENT_PROCEDURE[i].Traits[j].Score %>
+          <% } %>
+        </td>
+      </tr>
+      <% } %>
+    </table>
+
+    <h2>UNMAPPED ATTRIBUTES:</h2>
+    <table>
+      <tr>
+        <th>Type</th>
+        <th>Attributes</th>
+      </tr>
+      <% for(var i = 0; i < medicalCategories.UnmappedAttributes.length; i++) {
+      %>
+      <tr>
+        <td><%= medicalCategories.UnmappedAttributes[i].Type %></td>
+        <td>
+          <% for (var j = 0; j <
+          medicalCategories.UnmappedAttributes[i].Attributes.length; j++) { %>
+          <%= medicalCategories.UnmappedAttributes[i].Attributes[j].Type %> -
+          <%= medicalCategories.UnmappedAttributes[i].Attributes[j].Text %> <% }
+          %>
+        </td>
+      </tr>
+      <% } %>
+    </table>
+
+    <br />
+    <br />
+  </body>
+</html>

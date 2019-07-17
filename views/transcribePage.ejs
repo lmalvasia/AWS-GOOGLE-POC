@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Transcribes</title>
+  </head>
+  <body>
+    <h1>Success!</h1>
+    <h2>Amazon Transcribe</h2>
+    <form
+      id="aws-form"
+      name="aws-form"
+      action="success/medical"
+      method="post"
+    >
+      <textarea rows="4" cols="50" name="transcribe" form="aws-form"><%=awstranscript%></textarea>
+      <input type="submit" value="Send to Medical"></input>
+    </form>
+    <h2>Google Speech to Text</h2>
+    <form
+      id="google-form"
+      name="google-form"
+      action="success/medical"
+      method="post"
+    >
+      <textarea rows="4" cols="50" name="transcribe" form="google-form"><%=gtranscript%></textarea>
+      <input type="submit" value="Send to Medical"></input>
+    </form>
+    <br />
+    <br />
+  </body>
+</html>
